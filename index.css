@@ -1,0 +1,407 @@
+.header {
+    background-color: rgba(0, 0, 0, 0.894);
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 4000;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 992px;
+    margin: 0 auto;
+
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0 40px;
+    line-height: 80px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+    
+  }
+  
+  .nav-menu-item {
+    font-size: 18px;
+    /* con el margin de 30 doy ancho a los campos de la barra de navegacion*/
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+  }
+  
+  .nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 3px;
+  }
+  
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+    opacity: 5px;
+    transition: 0.5s;
+    text-decoration: none;
+  }
+  
+  /* TOGGLE */
+  .nav-toggle {
+    color: rgba(0, 0, 0, 0.894);;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  /* MOBILE */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 70px;
+    }
+  
+    .header {
+      height: 60px;
+    }
+  
+    .logo {
+      font-size: 25px;
+      padding: 0 20px;
+      line-height: 60px;
+    }
+  
+    .nav-menu {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      padding: 20px 0;
+      text-decoration: none;
+      height: calc(100% - 60px);
+      overflow-y: auto;
+      color: rgba(0, 0, 0, 0.894);
+      left: 100%;
+      transition: left 0.3s;
+    }
+  
+    .nav-menu-item {
+      line-height: 70px;
+    }
+  
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+      background: none;
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  
+    .nav-menu_visible {
+      left: 0;
+    }
+  
+    .nav-toggle:focus:not(:focus-visible) {
+      outline: none;
+    }
+  }
+
+
+
+
+/*session de producto numero 1*/
+.productos .container{
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 40px 0;
+  max-width: 1200px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 20px 35px 20px;
+  
+}
+
+.productos{
+  background: #fff;
+}
+
+.productos__grid{
+  display: grid;
+  height: 600px;
+  grid-template-areas: 
+  "motorapida motorapida accesorios ACEITE"
+  "motorapida motorapida tuning repuestos";
+  gap: 12px;
+
+}
+
+.img{
+  width: 100%;
+}
+
+.productos__item{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.productos__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.productos__item:nth-of-type(1){
+  grid-area: motorapida;
+}
+
+.productos__item:nth-of-type(2){
+  grid-area: accesorios;
+}
+
+.productos__item:nth-of-type(3){
+  grid-area: tuning;
+}
+
+.productos__item:nth-of-type(4){
+  grid-area: ACEITE;
+}
+
+.productos__item:nth-of-type(5){
+  grid-area: repuestos;
+}
+
+.productos__hover{
+  position: absolute;
+  background: rgba(26, 25, 25, 0.894);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(100%);
+  cursor: pointer;
+  transition: transform .3s ease-in-out;
+}
+
+.productos__item:hover .productos__hover{
+  transform: translateX(0%);
+}
+
+.productos__icon{
+  margin-top: 10px;
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Estilos de los productos*/
+.main {
+    padding: 20px;
+
+}
+
+.container-product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 6px 13px rgb(229, 226, 226);;
+}
+/*rgb(243, 243, 243);*/
+.product::before {
+    content: "nuevo";
+    background: rgb(224, 41, 41);
+    padding: 10px;
+    width: 60px;
+    position: absolute ;
+    top: 30px;
+    right:  0px;
+    transform: rotate(-90deg);
+    color:white;
+}
+
+.product__title {
+    text-align:  center;
+}
+
+.producto__price {
+    font-weight: bold;
+    
+}
+
+.product img {
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 180px;
+}
+
+.bottons__product {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  color:white;
+  padding-top: 7px;
+  padding-left: 30px;
+  padding-bottom: 7px;
+  padding-right: 30px;
+  background-color: rgb(29, 218, 92);
+  border-radius: 10px;
+}
+.bottons__product:hover {
+    color: white;
+}
+
+/*section two the product*/
+.main2 {
+    padding: 20px;
+}
+
+
+.containern2 {
+   width: 85%;
+   margin-left: 100px;
+   position: relative;
+}
+
+
+.container2-product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+.producto2 {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 6px 13px rgb(229, 226, 226);;
+}
+/*rgb(243, 243, 243);*/
+.producto2::before {
+    content: "50% DTO.!";
+    background: rgb(224, 41, 41);
+    padding: 10px;
+    width:100px;
+    position: absolute ;
+    top: 35px;
+    right:  -10px;
+    transform: rotate(-90deg);
+    color:white;
+}
+
+.producto2__title {
+    text-align:  center;
+}
+
+.producto__price2 {
+    font-weight: bold;
+    
+}
+
+.producto2 img {
+    width: 70%;
+    height: 200px;
+    object-fit: cover;
+    /*border-radius: 0px;*/
+}
+.bottons__product {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  color:white;
+  padding-top: 7px;
+  padding-left: 30px;
+  padding-bottom: 7px;
+  padding-right: 30px;
+  background-color:rgba(26, 25, 25, 0.894);
+  border-radius: 10px;
+}
+.bottons__product:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/*footer de la pagina*/
+footer{
+  position: absolute;
+  width: 100%;
+  background-color: rgba(26, 25, 25, 0.894);
+  color: #f1f1f1;
+  font-family: 'Anek Telugu', sans-serif;
+  height: 170px;
+}
+
+.footer__redes {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 200px;
+}
+
+.footer__redes a i {
+  color: white;
+  font-size: 20px;
+}
+
+
+/*
+.logotipo{
+  width: 240px;
+  height: 210px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+}*/
